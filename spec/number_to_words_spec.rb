@@ -1,5 +1,6 @@
 project_root = File.dirname(File.absolute_path(__FILE__))
 require "#{project_root}/../number_to_words.rb"
+require 'benchmark'
 
 describe 'Converting phone number to combination of words for' do
   it '6686787825 should include combinations' do
@@ -31,5 +32,19 @@ describe 'Converting phone number to combination of words for' do
 
   it '346553828332 should raise an error' do
     expect { NumberToWords.new('346553828332') }.to raise_error(StandardError)
+  end
+
+
+  it 'should display the runtime for different inputs' do
+    puts
+    num_arr = ['2282668687', '6686787825', '3456789234']
+    puts "No  UserCpu  SysCpu    Combined  Actual"
+    num_arr.each_with_index do |number, index|
+      puts "#{index + 1}"
+      print Benchmark.measure {
+        num = NumberToWords.new(number)
+        num.get_words
+      }
+    end
   end
 end
