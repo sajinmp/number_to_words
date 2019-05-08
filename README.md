@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/sajinmp/number_to_words.svg?branch=master)](https://travis-ci.org/sajinmp/number_to_words)
+
 # Convert phone number to word combinations
 Change phone number to word combinations with words available in dictionary with different sizes with minimum size of each word being 3.
 
