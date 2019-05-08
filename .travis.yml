@@ -2,4 +2,4 @@ language: ruby
 rvm: 2.5.1
 script:
   - bundle
-  - rspec
+  - bundle exec rspec
